@@ -7,7 +7,7 @@
  * 3. description
  */
 
-
+//Category -> categories
  module.exports = (sequelize, Sequelize) => {
     const Category = sequelize.define("category", {
     id : {
@@ -22,6 +22,8 @@
             description: {
                     type: Sequelize.STRING
                 }
+            }, {
+                tableName: 'categories'
             });
             return Category;
         }
