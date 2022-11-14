@@ -1,37 +1,34 @@
 /**
- * This file will be used to represend the Product Schema 
+ * This file will be used to represent the category schema
  * 
- * Product Fields:
- * 1. Id
- * 2. Name
+ * Category fields:
+ * 1. id
+ * 2. name
  * 3. description
  * 4. cost
- */
+*/
 
-
-module.exports = (Sequelize, sequelize) => {
-    const products = sequelize.define("products", {
-        id : {
-            type : Sequelize.INTEGER,
-            primaryKey : true,
-            autoIncreament : true,
-        },
-        name : {
-            type : Sequelize.STRING,
+module.exports = (sequelize, Sequelize) => {
+    const Product = sequelize.define("product", {
+        id: {
+            type: Sequelize.INTEGER,
+            primaryKey: true,
+            autoIncrement: true
+        }, 
+        name: {
+            type: Sequelize.STRING,
             allowNull: false,
         },
-        description : {
-            type : Sequelize.STRING,
+        description: {
+            type: Sequelize.STRING
         },
-        cost : {
-            type : Sequelize.INTEGER,
-            allowNUll : false,
+        cost: {
+            type: Sequelize.INTEGER,
+            allowNull: false
         }
-    } ,
+    }, 
     {
         tableName: 'products'
-    })
-    return products;
-
-    
+    });
+    return Product;
 }

@@ -21,6 +21,9 @@ app.use(bodyParser.json())
 const db = require("./models");
 const Category = db.category;
 
+
+
+
 db.sequelize.sync({force: true})
 .then(() => {
     console.timeLog('tables dropped and created');
@@ -48,7 +51,7 @@ function init() {
     }
 
 require('./routes/category.routes')(app)
-        
+require('./routes/product.routes')(app)     
 
 app.listen(serverConfig.PORT, () => {
 console.log(`Application is started on port no: ${serverConfig.PORT}`)
