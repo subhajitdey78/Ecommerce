@@ -49,8 +49,8 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
 
   let productName = req.query.name;
-  let minCost = req.query.minCost;
-  let maxCost = req.query.maxCost;
+  let minCost = req.query.minCost; // null
+  let maxCost = req.query.maxCost; // null
    let promise;
 
   if(productName) {
