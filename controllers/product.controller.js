@@ -5,7 +5,7 @@
 
 
 
-
+ const { product } = require("../models");
 const db = require("../models");
 const Product = db.product;
 const Op = db.Sequelize.Op;
@@ -132,7 +132,8 @@ exports.update = (req, res) => {
     const product = {
         name : req.body.name,
         description : req.body.description,
-        cost : req.body.cost
+        cost : req.body.cost,
+        categoryId : req.body.categoryId
     }
     const productId = req.params.id
     Product.update(product, {
@@ -175,5 +176,29 @@ exports.delete = (req, res) => {
         res.status(500).send({
             message: "Some internal error while deleting the product"
         })
+    })
+}
+
+/**
+ * Get the list of all producst under a category
+ */
+
+exports.getProductsUnderCategory = (req, res) => {
+    const categoryId = parseInt(req.params.categoryId);
+ 
+    // select * from Product where categoryId = categoryid
+
+    Product.findAll({
+        where : {
+            categoryId : categoryId
+        }
+    })
+    .then(products => {
+ res.status(200).send(products);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: "Some internal error while fetching products based on category"
+      })  
     })
 }
