@@ -13,11 +13,7 @@ const Category = db.category;
 */
 exports.create = (req, res) => {
 
-    /**
-     * Creation of the category object to be stored in the db.
-    */
- 
-    
+        
     const category = {
         name: req.body.name,
         description: req.body.description
