@@ -25,7 +25,7 @@ const validateCategoryRequest = (req, res, next) => {
             return;
         }
     if(req.body.categoryId) {
-     
+
         Category.findByPk(req.body.categoryId)
         .then(category =>{
             if(!category) {
