@@ -10,7 +10,7 @@ var bcrypt = require("bcryptjs");
 
 exports.signup = (req, res) => {
 
-    console.log("In Signup");
+   
     User.create({
         username: req.body.username,
         email: req.body.email,
