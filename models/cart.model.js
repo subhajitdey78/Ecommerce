@@ -8,9 +8,7 @@ module.exports = (sequelize, Sequelize) => {
             primaryKey : true,
             autoIncrement: true,
         },
-        cost : {
-            type : Sequelize.INTEGER
-        }
+        
     });
     return Cart;
 }
