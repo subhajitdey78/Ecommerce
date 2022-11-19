@@ -42,7 +42,7 @@ describe('CategoryController.create', () => {
 
     //     //Mocking model command
     //     const spy = jest.spyOn(CategoryModel, 'create')
-    //     .mockImplementation((newCategory) => Promise.reject("Thsi is an error"));
+    //     .mockImplementation((newCategory) => Promise.reject("This is an error"));
 
     //     //executing controller command
     //  await CategoryController.create(req, res)
