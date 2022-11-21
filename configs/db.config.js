@@ -8,9 +8,9 @@ module.exports = {
     },
     production: {
        HOST: "sql12.freemysqlhosting.net", 
-       USER: "sql12579388",
-       PASSWORD: "sNWAk91NRe",
-       DB: " sql12579388",
+       USER: "sql12579408",
+       PASSWORD: "jp6RtVSbnv",
+       DB: "sql12579408",
        dialect: "mysql"
        
     }
