@@ -8,7 +8,10 @@ module.exports = (sequelize, Sequelize) => {
             primaryKey : true,
             autoIncrement: true,
         },
-        
-    });
+        status: {
+           type: Sequelize.STRING,
+           allowNull: false
+        }
+            });
     return Cart;
 }

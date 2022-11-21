@@ -31,11 +31,7 @@ describe('CategoryController.create', () => {
      expect(spy).toHaveBeenCalled();
      expect(CategoryModel.create).toHaveBeenCalledWith(newCategory);
      expect(res.status).toHaveBeenCalledWith(201);
-     expect(res.send).toHaveBeenCalledWith(newCategory);
-
-    
-     
-
+     expect(res.send).toHaveBeenCalledWith(newCategory); 
     })
 
     // test('should call CategoryController.create and create a new category', async() => {
