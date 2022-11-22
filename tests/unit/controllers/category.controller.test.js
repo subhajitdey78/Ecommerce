@@ -34,21 +34,23 @@ describe('CategoryController.create', () => {
      expect(res.send).toHaveBeenCalledWith(newCategory); 
     })
 
-    // test('should call CategoryController.create and create a new category', async() => {
+    test('should call CategoryController.create and create a new category', async() => {
 
-    //     //Mocking model command
-    //     const spy = jest.spyOn(CategoryModel, 'create')
-    //     .mockImplementation((newCategory) => Promise.reject("This is an error"));
+        //Mocking model command
+        const spy = jest.spyOn(CategoryModel, 'create')
+        .mockImplementation(() => Promise.reject("This is an error"));
 
-    //     //executing controller command
-    //  await CategoryController.create(req, res)
-    //  expect(spy).toHaveBeenCalled();
-    //  expect(CategoryModel.create).toHaveBeenCalledWith(newCategory);
-    //  expect(res.status).toHaveBeenCalledWith(500);
-    //  expect(res.send).toHaveBeenCalledWith({
-    //   message: "some internal error while starting the category"
-    //  })
-    // })
+        //executing controller command
+     await CategoryController.create(req, res)
+    
+
+     // test to verify the create function
+      await expect(spy).toHaveBeenCalledWith();
+     expect().toHaveBeenCalledWith(500);
+     expect(res.send).toHaveBeenCalledWith({
+      message: "some internal error while starting the category"
+     })
+    })
 
     });
 describe('CategoryController, findAll', () => {
